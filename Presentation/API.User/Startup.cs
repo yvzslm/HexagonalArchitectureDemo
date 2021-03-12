@@ -30,8 +30,7 @@ namespace API.User
             });
 
             services.AddScoped<IUserFacade, UserFacade>();
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IUserNotification, UserNotification>();
+            services.AddScoped<IUserRepository, SqlServerAdapter>();
 
             services.AddDbContext<DemoDbContext>(options =>
             {

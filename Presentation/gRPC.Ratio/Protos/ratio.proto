@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPC.Ratio";
+
+package ratio;
+
+// The greeting service definition.
+service Ratio {
+  // Sends a greeting
+  rpc GetRatios (GetRatiosRequest) returns (GetRatiosResponse);
+}
+
+message RatioEntity {
+	int32 id = 1;
+	repeated string banks = 2;
+	repeated Instalment instalments = 3;
+}
+
+message Instalment {
+	string key = 1;
+	repeated int32 value = 2;
+}
+
+// The request message containing the user's name.
+message GetRatiosRequest {
+  string company_code = 1;
+  string agent_id = 2;
+  string bank_id = 3;
+  bool add_commission_to_amount = 4;
+  repeated int32 instalments = 5;
+}
+
+// The response message containing the greetings.
+message GetRatiosResponse {
+  repeated RatioEntity ratio_entity = 1;
+}

@@ -1,6 +1,8 @@
-﻿namespace Domain.User
+﻿using Domain.Shared.Models;
+
+namespace Domain.User
 {
-    public class UserEntity
+    public class UserEntity : EntityBase
     {
         public int ID { get; private set; }
         public string FirstName { get; private set; }

@@ -8,14 +8,14 @@ namespace Test.User
     public class AddUserTest
     {
         [Fact]
-        public void Should_Add_User()
+        public async void Should_Add_User()
         {
             //Arrange
-            var userFacade = new UserFacade(new FakeUserRepository(), new FakeUserNotification());
-            var addUser = new AddUser("Yavuz", "Altun", "test@test.com.tr", "4736352728");
+            var userFacade = new UserFacade(new FakeSqlServerAdapter());
+            var addUser = new AddUserCommand("Yavuz", "Altun", "test@test.com.tr", "4736352728");
 
             //Act
-            var userEntity = userFacade.AddUser(addUser);
+            var userEntity = await userFacade.AddUserAsync(addUser);
 
             //Assert
             Assert.Equal(addUser.FirstName, userEntity.FirstName);

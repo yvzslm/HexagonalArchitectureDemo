@@ -1,7 +1,8 @@
-﻿namespace Domain.User.Ports.Outgoing
+﻿using Domain.Shared.Models;
+
+namespace Domain.User.Ports.Outgoing
 {
-    public interface IUserRepository
+    public interface IUserRepository : IRepository<UserEntity>
     {
-        UserEntity Add(UserEntity user);
     }
 }

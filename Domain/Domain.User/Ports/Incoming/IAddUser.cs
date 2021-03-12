@@ -1,9 +1,10 @@
 ﻿using Domain.User.Models;
+using System.Threading.Tasks;
 
 namespace Domain.User.Ports.Incoming
 {
     public interface IAddUser
     {
-        UserEntity AddUser(AddUser addUser);
+        Task<UserEntity> AddUserAsync(AddUserCommand addUser);
     }
 }

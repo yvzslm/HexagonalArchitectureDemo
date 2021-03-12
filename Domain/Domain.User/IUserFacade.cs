@@ -2,7 +2,7 @@
 
 namespace Domain.User
 {
-    public interface IUserFacade : IAddUser, ISendMail, ISendSms
+    public interface IUserFacade : IAddUser
     {
     }
 }
